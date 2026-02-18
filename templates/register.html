@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .register-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    width: 380px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+
+  input:focus,
+  select:focus {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d4d;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+  }
+
+  .btn:hover {
+    background: #cc0000;
+  }
+
+  .login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .login-link a {
+    color: #ffd43b;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+
+  .error-message {
+    background: rgba(255, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 22px;
+    color: white !important;
+  }
+  
+</style>
+
+<body>
+
+  <form action="/register" method="post">
+    
+    <div class="form-group">
+      <h1 style="text-align:center; color: aqua; font-size: 50px;">Carrier Guider</h1>
+      <h2 style="text-align:center; margin-bottom: 10px;">Create Account 🚀</h2>
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+        required>
+        {% if error %}
+    <p style="color:red;">{{ error }}</p>
+    {% endif %}
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1 " name="password" required>
+    </div>
+    <label for="exampleInputName1">Name</label>
+    <input type="text" class="form-control" id="exampleInputName1" name="name" required>
+    <div>
+
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Current Pursuing/Completed Education</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="education" required>
+        <option></option>
+        <option>Grade 10</option>
+        <option>Grade 12 Science(PCM)</option>
+        <option>Grade 12 Science(PCB)</option>
+        <option>Grade 12 Science(PCMB)</option>
+        <option>Grade 12 Commerce</option>
+        <option>Grade 12 Arts</option>
+        <option>Diploma/Polytechnic</option>  
+        <option>UG</option>
+      </select>
+    </div>
+
+    <div>
+      <a href="/login">Already Registered?</a>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</body>
+
+</html>
