@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12th science pcm Assessment</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        function toggleNinthMarks() {
+            const checkbox = document.getElementById("ninthToggle");
+            const ninthSection = document.getElementById("ninthMarksSection");
+
+            if (checkbox.checked) {
+                ninthSection.classList.remove("hidden");
+            } else {
+                ninthSection.classList.add("hidden");
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-500 to-green-500 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-3xl">
+
+        <h1 class="text-2xl font-bold text-center mb-6">
+            Current Pursuing / Completed {{ Education }}
+        </h1>
+
+        <form method="POST" action="/assessment">
+
+            <!-- 🔥 12th PCMB Marks (Mandatory) -->
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Enter 12th PCM Marks (Mandatory)</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                <input type="number" name="physics" placeholder="Physics Marks"
+                       required class="border p-2 rounded">
+
+                <input type="number" name="bio" placeholder="Biology Marks"
+                       required class="border p-2 rounded">
+
+                <input type="number" name="math" placeholder="Mathematics Marks"
+                       required class="border p-2 rounded">
+                       
+                <input type="number" name="chemistry" placeholder="Chemistry Marks"
+                       required class="border p-2 rounded">
+
+                <input type="number" name="english" placeholder="English Marks"
+                       required class="border p-2 rounded">
+
+
+            </div>
+
+            <!-- 🔥 Optional 11th Marks Toggle -->
+            <div class="mt-6">
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" id="ninthToggle"
+                           onclick="toggleNinthMarks()" class="w-4 h-4">
+                    <span class="text-gray-700 font-medium">
+                        I want to enter 11th marks (Optional)
+                    </span>
+                </label>
+            </div>
+
+            <!-- 🔥 11th Marks Section (Hidden Initially) -->
+            <div id="ninthMarksSection" class="hidden mt-6">
+
+                <h2 class="text-xl font-semibold mb-4 text-gray-700">
+                    Enter 11th Marks (Optional)
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                    <input type="number" name="n_eng" placeholder="English Marks"
+                           class="border p-2 rounded">
+
+                    <input type="number" name="n_bio" placeholder="Biology Marks"
+                           class="border p-2 rounded">
+
+                    <input type="number" name="n_math" placeholder="Mathematics Marks"
+                           class="border p-2 rounded">
+
+                    <input type="number" name="n_physics" placeholder="Physics Marks"
+                           class="border p-2 rounded">
+
+                    <input type="number" name="n_chemistry" placeholder="Chemistry Marks"
+                           class="border p-2 rounded">
+
+
+
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-8 text-center">
+                <button type="submit"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition">
+                    Submit Assessment
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
