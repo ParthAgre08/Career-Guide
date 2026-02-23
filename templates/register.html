@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+  </head>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
   * {
@@ -19,26 +19,44 @@
 
   body {
     height: 100vh;
-    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    background: linear-gradient(135deg, #ffffff 0%, #f2f7ff 50%, #e6f0ff 100%);
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .register-container {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    padding: 40px;
-    width: 380px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    color: white;
+  form {
+    background: #ffffff;
+    padding: 45px 40px;
+    width: 420px;
+    border-radius: 22px;
+    border: 1px solid rgba(0, 90, 255, 0.2);
+    box-shadow:
+      0 15px 45px rgba(0, 60, 255, 0.12),
+      0 0 25px rgba(0, 90, 255, 0.08);
+    transition: 0.3s ease;
   }
 
-  .register-container h2 {
+  form:hover {
+    box-shadow:
+      0 20px 55px rgba(0, 60, 255, 0.18),
+      0 0 35px rgba(0, 90, 255, 0.15);
+  }
+
+  h1 {
     text-align: center;
-    margin-bottom: 25px;
+    font-size: 40px !important;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
     font-weight: 600;
+    color: #0d1b4c;
   }
 
   .form-group {
@@ -47,119 +65,134 @@
 
   label {
     font-size: 14px;
+    font-weight: 500;
     display: block;
     margin-bottom: 6px;
+    color: #1a2a6c;
   }
 
   input,
   select {
     width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #cce0ff;
     outline: none;
     font-size: 14px;
+    background-color: #f9fbff;
+    transition: 0.3s ease;
+  }
+
+  input:hover,
+  select:hover {
+    border-color: #1a75ff;
   }
 
   input:focus,
   select:focus {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    background-color: #ffffff;
+    border-color: #1a4dff;
+    box-shadow: 0 0 12px rgba(0, 85, 255, 0.4);
+  }
+
+  small {
+    font-size: 12px;
+    color: #5a6ea8;
   }
 
   .btn {
     width: 100%;
-    padding: 12px;
+    padding: 13px;
+    margin-top: 15px;
     border: none;
-    border-radius: 25px;
-    background: #ff4d4d;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
     color: white;
     font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
+    transition: 0.3s ease;
   }
 
   .btn:hover {
-    background: #cc0000;
+    background: linear-gradient(90deg, #001f99, #0052ff);
+    box-shadow: 0 0 20px rgba(0, 90, 255, 0.6);
+    transform: translateY(-3px);
   }
 
-  .login-link {
-    text-align: center;
-    margin-top: 15px;
+  a {
+    text-decoration: none;
+    color: #1a4dff;
+    font-weight: 500;
     font-size: 14px;
   }
 
-  .login-link a {
-    color: #ffd43b;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .login-link a:hover {
+  a:hover {
     text-decoration: underline;
   }
 
-  .error-message {
-    background: rgba(255, 0, 0, 0.2);
-    padding: 8px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+  p {
     text-align: center;
     font-size: 14px;
+    margin: 8px 0;
   }
 
-  .navbar-brand {
-    font-weight: bold;
-    font-size: 22px;
-    color: white !important;
+  @media (max-width: 480px) {
+    form {
+      width: 92%;
+      padding: 35px 25px;
+    }
+
+    h1 {
+      font-size: 30px !important;
+    }
   }
-  
 </style>
 
-<body>
+  <body>
 
-  <form action="/register" method="post">
-    
-    <div class="form-group">
-      <h1 style="text-align:center; color: aqua; font-size: 50px;">Carrier Guider</h1>
-      <h2 style="text-align:center; margin-bottom: 10px;">Create Account 🚀</h2>
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
-        required>
-        {% if error %}
-    <p style="color:red;">{{ error }}</p>
-    {% endif %}
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1 " name="password" required>
-    </div>
-    <label for="exampleInputName1">Name</label>
-    <input type="text" class="form-control" id="exampleInputName1" name="name" required>
-    <div>
+    <form action="/register" method="post">
+      
+      <div class="form-group">
+        <h1 style="text-align:center; color: aqua; font-size: 50px;">Carrier Guider</h1>
+        <h2 style="text-align:center; margin-bottom: 10px;">Create Account </h2>
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+          required>
+          {% if error %}
+      <p style="color:red;">{{ error }}</p>
+      {% endif %}
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1 " name="password" required>
+      </div>
+      <label for="exampleInputName1">Name</label>
+      <input type="text" class="form-control" id="exampleInputName1" name="name" required>
+      <div>
 
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Current Pursuing/Completed Education</label>
-      <select class="form-control" id="exampleFormControlSelect1" name="education" required>
-        <option></option>
-        <option>Grade 10</option>
-        <option>Grade 12 Science(PCM)</option>
-        <option>Grade 12 Science(PCB)</option>
-        <option>Grade 12 Science(PCMB)</option>
-        <option>Grade 12 Commerce</option>
-        <option>Grade 12 Arts</option>
-        <option>Diploma/Polytechnic</option>  
-        <option>UG</option>
-      </select>
-    </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Current Pursuing/Completed Education</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="education" required>
+          <option></option>
+          <option>Grade 10</option>
+          <option>Grade 12 Science(PCM)</option>
+          <option>Grade 12 Science(PCB)</option>
+          <!-- <option>Grade 12 Science(PCMB)</option> -->
+          <option>Grade 12 Commerce</option>
+          <option>Grade 12 Arts</option>
+          <!-- <option>Diploma/Polytechnic</option>   -->
+          <option>UG</option>
+        </select>
+      </div>
 
-    <div>
-      <a href="/login">Already Registered?</a>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</body>
+      <div>
+        <a href="/login">Already Registered?</a>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </body>
 
-</html>
+  </html>

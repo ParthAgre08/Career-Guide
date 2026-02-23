@@ -9,118 +9,174 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <style>
-       body {
+<style>
+
+body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
 
-    background: linear-gradient(135deg, #4e73df, #1cc88a);
-    background-attachment: fixed;   /* makes gradient smooth while scrolling */
+    /* White + Neon Blue Gradient */
+    background: linear-gradient(135deg, #ffffff 0%, #f2f7ff 50%, #e6f0ff 100%);
+    background-attachment: fixed;
 }
 
-        /* Navbar Styling */
-        .navbar {
-            background: rgba(255, 255, 255, 0.15) !important;
-            backdrop-filter: blur(10px);
-            padding: 15px 30px;
-        }
+/* ===== Navbar ===== */
+.navbar {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    padding: 15px 40px;
+    border-bottom: 1px solid rgba(0, 90, 255, 0.2);
+    box-shadow: 0 5px 20px rgba(0, 60, 255, 0.08);
+}
 
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 22px;
-            color: white !important;
-        }
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-            margin-left: 15px;
-            transition: 0.3s ease;
-        }
+.nav-link {
+    color: #1a2a6c !important;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: 0.3s ease;
+}
 
-        .nav-link:hover {
-            color: #ffd43b !important;
-        }
+.nav-link:hover {
+    color: #1a4dff !important;
+}
 
-        /* Logout Button Style */
-        a[href="/logout"] {
-            background-color: #ff4d4d;
-            padding: 8px 15px;
-            border-radius: 20px;
-            color: white !important;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: 0.3s;
-        }
+/* Logout Button */
+.logout-btn,
+a[href="/logout"] {
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    padding: 8px 18px;
+    border-radius: 25px;
+    color: white !important;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s ease;
+}
 
-        a[href="/logout"]:hover {
-            background-color: #cc0000;
-        }
+.logout-btn:hover,
+a[href="/logout"]:hover {
+    box-shadow: 0 0 15px rgba(0, 85, 255, 0.5);
+    transform: translateY(-2px);
+}
 
-        /* Hero Section */
-        h2 {
-            text-align: center;
-            margin-top: 120px;
-            font-size: 40px;
-            color: white;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        p {
-            text-align: center;
-            font-size: 18px;
-            color: white;
-            margin-top: 10px;
-        }
-
-        /* Career Motivation Box */
-        header {
+/* ===== Hero Section ===== */
+header {
     text-align: center;
+    margin-top: 120px;
+}
+
+h2 {
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+p {
+    font-size: 18px;
+    color: #1a2a6c;
+    margin-top: 12px;
 }
 
 header p:nth-of-type(2) {
     display: inline-block;
-    padding: 8px 30px;
+    padding: 10px 35px;
     border-radius: 30px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(0, 90, 255, 0.08);
+    border: 1px solid rgba(0, 90, 255, 0.2);
 }
-        /* p:nth-of-type(2) {
-            background: rgba(255, 255, 255, 0.2);
-            display: inline-block;
-            padding: 5px;
-            border-radius: 25px;
 
-            margin-left: 400px;
-            margin-right: 400px;
-            text-align: center;
-        } */
+/* ===== Cards Section ===== */
+section {
+    margin-top: 80px;
+}
 
-        /* Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+/* Override Tailwind Card Look */
+section .bg-white {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 90, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 60, 255, 0.08);
+    transition: 0.3s ease;
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        main {
+section .bg-white:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 60, 255, 0.15);
+    border: 1px solid rgba(0, 90, 255, 0.3);
+}
+
+section h3 {
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Buttons inside cards */
+section button {
+    background: linear-gradient(90deg, #0033cc, #1a75ff) !important;
+    border-radius: 20px !important;
+    transition: 0.3s ease;
+}
+
+section button:hover {
+    box-shadow: 0 0 15px rgba(0, 85, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: auto;
+    background: linear-gradient(90deg, #051648, #1a75ff);
+    padding: 40px 0;
+}
+
+footer h2 {
+    -webkit-text-fill-color: white;
+    background: none;
+}
+
+footer a {
+    color: white !important;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    color: #e6f0ff !important;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
     flex: 1;
 }
 
-footer {
-    margin-top: auto;
-    background-color: rgb(13, 11, 50);
-}
-
-    </style>
+</style>
 
 
 </head>
@@ -140,10 +196,10 @@ footer {
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Assesment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Chatbot</a>
                     </li>
                     <li class="nav-item">
                         <a href="/logout" class="logout-btn">Logout</a>
@@ -160,18 +216,19 @@ footer {
         <header>
             <h2>{{ greeting }}, {{ name }} 👋</h2>
             <p>Ready to explore your future career path?</p>
-            <p>🚀 Your dream career is waiting. Let’s find the perfect path for you.</p>
+            <p> Your dream career is waiting. Let’s find the perfect path for you.</p>
         </header>
     </main>
 
-<section class="py-12 bg-white/10 backdrop-blur-md">
+<section class="py-12 bg-white/10 backdrop-blur-md pl-30">
    
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ml-4 mr-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 
+            max-w-5xl mx-auto">
 
             <!-- project card  -->
             <div class="items-center justify-center bg-white shadow-lg rounded-lg overflow-hidden p-3 hover:shadow-4xl hover:scale-105 transition transform duration-300">
                 <img class="h-56 w-full object-contain bg-gray-100 rounded-lg" src="/static/carrier_ass2.png" alt="">
-                <h3 class="text-xl font-bold mt-3 text-gray-800 text-center">🎯 Career Assessment</h3>
+                <h3 class="text-xl font-bold mt-3 text-gray-800 text-center"> Career Assessment</h3>
                 <p class="text-gray-600 mt-2 text-center text-justify">Analyze your academic strengths and interests.</p>
                 <div class="mt-4 flex justify-between items-center">
                     <!-- <span class="text-sm text-gray-500" >Disease Prediction</span> -->
@@ -183,30 +240,30 @@ footer {
  <!-- project card  -->
             <div class="bg-white shadow-lg rounded-lg overflow-hidden p-3 hover:shadow-4xl hover:scale-105 transition transform duration-300 hover:border-2 hover:border-blue-300">
                 <img class="h-56 w-full object-contain bg-gray-100 rounded-lg" src="/static/explore_fileds2.png" alt="">
-                <h3 class="text-xl font-bold mt-3 text-gray-800 text-center">🔎 Explore Career Paths</h3>
+                <h3 class="text-xl font-bold mt-3 text-gray-800 text-center"> Explore Career Paths</h3>
                 <p class="text-gray-600 mt-2 text-center text-justify">Discover streams, degrees, and future opportunities.</p>
                 <div class="mt-4 flex justify-between items-center">
                     <!-- <span class="text-sm text-gray-500" >Education Guidence</span> -->
                     <a href="/explore"><button class="ml-40 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-800">Explore</button></a>
                 </div>
             </div>
-                        <!-- project card  -->
+                        <!-- project card 
             <div class="bg-white shadow-lg rounded-lg overflow-hidden p-3 hover:shadow-4xl hover:scale-105 transition transform duration-300 hover:border-2 hover:border-blue-300 ">
                 <img class="h-56 w-full object-contain bg-gray-100 rounded-lg" src="/static/chat_bot.png" alt="">
-                <h3 class="text-xl font-bold mt-3 text-gray-800 text-center">🤖 AI Career Assistant</h3>
+                <h3 class="text-xl font-bold mt-3 text-gray-800 text-center"> AI Career Assistant</h3>
                 <p class="text-gray-600 mt-2 text-center text-justify">Ask questions and get guided suggestions.</p>
                 <div class="mt-4 flex justify-between items-center">
-                    <!-- <span class="text-sm text-gray-500 " >ZeroWaste Connect is a platform</span> -->
-                   <a href="\chat"> <button class="ml-40 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-800">Chat</button></a>
+                    <span class="text-sm text-gray-500 " >ZeroWaste Connect is a platform</span> -->
+                   <!-- <a href="\chatbot"> <button class="ml-40 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-800">Chat</button></a>
                 </div>
-            </div>
+            </div> -->
 
 
           </section>              <!-- project card  -->
             
 
     <footer  class="bg-gray backdrop-blur-md w-full py-10 mt-auto">
-        <h2 class="font-bold text-lg text-white text-center mb-7">Contact with Me</h2>
+        <h2 class="font-bold text-lg text-white text-center mb-7">Contact with Us</h2>
 
         <!-- Social Media Links Centered -->
         <div class="flex justify-center mb-4">
@@ -243,7 +300,8 @@ footer {
     </footer >
 
 
-
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/02/22/06/20260222062438-X6J7UO8X.js" defer></script>
 
 </body>
 

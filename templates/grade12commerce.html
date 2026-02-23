@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12th Commerce Academic Assessment</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-    <h1>Current Pursuing /Completed  {{Education}}</h1>
+
+<body class="bg-gradient-to-br from-indigo-600 to-blue-700 min-h-screen flex justify-center items-center p-6">
+
+<div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-4xl">
+
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">
+        Grade 12 Commerce – Academic Assessment
+    </h1>
+
+    <p class="text-center text-gray-600 mb-8">
+        Enter your subject marks (Out of 100)
+    </p>
+
+    <form method="POST" action="/assessment" class="space-y-8">
+
+        <!-- Accounts -->
+        <div>
+            <label class="block font-semibold mb-2">
+                Accounts
+            </label>
+            <input type="number" name="accounts" min="0" max="100" required
+                   class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <!-- Economics -->
+        <div>
+            <label class="block font-semibold mb-2">
+                Economics
+            </label>
+            <input type="number" name="economics" min="0" max="100" required
+                   class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <!-- Business Studies -->
+        <div>
+            <label class="block font-semibold mb-2">
+                Business Studies
+            </label>
+            <input type="number" name="business" min="0" max="100" required
+                   class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <!-- Maths / SP -->
+        <div>
+            <label class="block font-semibold mb-2">
+                Mathematics / Statistics (SP)
+            </label>
+            <input type="number" name="maths" min="0" max="100"
+                   class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <p class="text-sm text-gray-500 mt-1">
+                Optional (If applicable)
+            </p>
+        </div>
+
+        <!-- English -->
+        <div>
+            <label class="block font-semibold mb-2">
+                English
+            </label>
+            <input type="number" name="english" min="0" max="100" required
+                   class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center pt-6">
+            <button type="submit"
+                class="bg-indigo-600 text-white px-10 py-3 rounded-lg hover:bg-indigo-800 font-bold text-lg transition">
+                Continue to Personality Assessment
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
 </body>
 </html>

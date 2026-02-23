@@ -19,6 +19,107 @@
             }
         }
     </script>
+
+    <style>
+
+/* ===== Background Override ===== */
+body {
+    background: linear-gradient(135deg, #ffffff 0%, #f2f7ff 50%, #e6f0ff 100%) !important;
+}
+
+/* ===== Main Card ===== */
+body > div {
+    background: #ffffff !important;
+    border-radius: 28px !important;
+    border: 1px solid rgba(0, 90, 255, 0.2);
+    box-shadow:
+        0 25px 70px rgba(0, 60, 255, 0.12),
+        0 0 35px rgba(0, 90, 255, 0.08);
+    transition: 0.3s ease;
+    animation: fadeUp 0.8s ease-in-out;
+}
+
+body > div:hover {
+    box-shadow:
+        0 30px 80px rgba(0, 60, 255, 0.18),
+        0 0 45px rgba(0, 90, 255, 0.15);
+}
+
+/* ===== Heading ===== */
+h1 {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Section Titles */
+h2 {
+    color: #1a2a6c !important;
+}
+
+/* ===== Input Styling ===== */
+input[type="number"] {
+    border: 1px solid #cce0ff !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
+    background-color: #f9fbff !important;
+    transition: 0.3s ease !important;
+}
+
+input[type="number"]:hover {
+    border-color: #1a75ff !important;
+}
+
+input[type="number"]:focus {
+    border-color: #1a4dff !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(0, 85, 255, 0.4) !important;
+    outline: none !important;
+}
+
+/* ===== Checkbox Styling ===== */
+input[type="checkbox"] {
+    accent-color: #1a4dff;
+}
+
+/* ===== Optional Section Styling ===== */
+#ninthMarksSection {
+    background: rgba(0, 90, 255, 0.05);
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 90, 255, 0.15);
+    transition: 0.3s ease;
+}
+
+/* ===== Submit Button ===== */
+button[type="submit"] {
+    background: linear-gradient(90deg, #0033cc, #1a75ff) !important;
+    border-radius: 30px !important;
+    padding: 12px 35px !important;
+    font-weight: 600 !important;
+    transition: 0.3s ease !important;
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 0 20px rgba(0, 85, 255, 0.6) !important;
+    transform: translateY(-3px);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
 </head>
 
 <body class="bg-gradient-to-br from-blue-500 to-green-500 min-h-screen flex items-center justify-center">
@@ -32,7 +133,7 @@
         <form method="POST" action="/assessment">
 
             <!-- 🔥 12th PCB Marks (Mandatory) -->
-            <h2 class="text-xl font-semibold mb-4 text-gray-700">Enter 12th PCM Marks (Mandatory)</h2>
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Enter 12th PCB Marks (Mandatory)</h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 

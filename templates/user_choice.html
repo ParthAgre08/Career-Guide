@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Career Assistant</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+    background: linear-gradient(135deg, #f5f9ff, #eef4ff);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.main-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.12);
+    border: 1px solid #e5edff;
+    padding: 45px;
+    transition: 0.3s ease;
+}
+
+.main-card:hover {
+    box-shadow: 0 25px 70px rgba(37, 99, 235, 0.18);
+}
+
+/* 🔥 Bigger Premium Heading */
+h2 {
+    font-size: 52px;
+    font-weight: 900;
+    color: #1e3a8a;
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+}
+
+/* 🔥 Larger textarea text */
+textarea {
+    border-radius: 12px;
+    border: 1px solid #dbeafe;
+    padding: 18px;
+    transition: 0.3s ease;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+textarea::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* 🔥 Bigger Button Text */
+button {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    border-radius: 12px;
+    padding: 14px 48px;
+    font-weight: 700;
+    font-size: 17px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+</style>
+</head>
+
+<body class="flex justify-center items-center min-h-screen">
+
+<div class="main-card w-full max-w-2xl">
+
+<h2 class="mb-6 text-center">
+Tell us what career you prefer
+</h2>
+
+<form method="POST" action="/custom_recommendation">
+
+<textarea name="user_preference"
+class="w-full"
+rows="5"
+placeholder="Describe what kind of career you want..."
+required></textarea>
+
+<div class="text-center mt-6">
+<button type="submit">
+Generate Custom Roadmap
+</button>
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

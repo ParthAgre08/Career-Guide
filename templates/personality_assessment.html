@@ -4,10 +4,101 @@
     <title>Interest Quiz</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    
+<style>
+
+/* ===== Clean Background ===== */
+body {
+    background: linear-gradient(135deg, #f5f9ff, #eef4ff);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== Main Card ===== */
+body > div {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(37, 99, 235, 0.12);
+    padding: 40px !important;
+    border: 1px solid #e5edff;
+}
+
+/* ===== Main Title ===== */
+h1:first-of-type {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #1e3a8a;
+    margin-bottom: 30px !important;
+}
+
+/* ===== Section Titles ===== */
+h1[style] {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: #f1f5ff;
+    color: #1d4ed8 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    border-left: 4px solid #2563eb;
+}
+
+/* ===== Question Cards ===== */
+.mb-6 {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+}
+
+.mb-6:hover {
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+/* ===== Question Text ===== */
+.mb-6 p {
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+/* ===== Radio Buttons ===== */
+input[type="radio"] {
+    accent-color: #2563eb;
+    margin-right: 8px;
+    transform: scale(1.05);
+}
+
+/* ===== Labels ===== */
+label {
+    cursor: pointer;
+    color: #374151;
+    transition: 0.2s ease;
+}
+
+label:hover {
+    color: #2563eb;
+}
+
+/* ===== Submit Button ===== */
+button[type="submit"] {
+    background: #2563eb !important;
+    border-radius: 8px !important;
+    padding: 12px 40px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #1d4ed8 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+}
+
+</style>
 </head>
 
-<body class="bg-gradient-to-br from-blue-500 to-green-500 min-h-screen flex items-center justify-center">
+<body class="min-h-screen flex items-center justify-center">
 
 <div class="bg-white p-8 mt-10 rounded-xl shadow-lg w-full max-w-3xl">
 
