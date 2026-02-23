@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Recommendation</title>
+
+
+<style>
+
+/* ===== Background ===== */
+body {
+    background: linear-gradient(135deg, #ffffff 0%, #f2f7ff 50%, #e6f0ff 100%) !important;
+}
+
+/* ===== Main Card ===== */
+body > div {
+    background: #ffffff !important;
+    border-radius: 28px !important;
+    border: 1px solid rgba(0, 90, 255, 0.2);
+    box-shadow:
+        0 25px 70px rgba(0, 60, 255, 0.12),
+        0 0 35px rgba(0, 90, 255, 0.08);
+    transition: 0.3s ease;
+    animation: fadeUp 0.8s ease-in-out;
+}
+
+body > div:hover {
+    box-shadow:
+        0 30px 80px rgba(0, 60, 255, 0.18),
+        0 0 45px rgba(0, 90, 255, 0.15);
+}
+
+/* ===== Main Heading ===== */
+h1 {
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== Best Stream Highlight ===== */
+h2 span {
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* ===== Confidence Text ===== */
+p {
+    color: #1a2a6c !important;
+}
+
+/* ===== Stream Scores Section ===== */
+h3 {
+    color: #1a2a6c !important;
+    font-size: 18px !important;
+}
+
+
+/* Style for score lines */
+body > div p:not(:first-of-type) {
+    background: rgba(0, 90, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 90, 255, 0.15);
+    margin-bottom: 10px;
+}
+
+/* ===== Buttons ===== */
+a[href="/career_roadmap"] {
+    background: linear-gradient(90deg, #0033cc, #1a75ff) !important;
+    border-radius: 30px !important;
+    padding: 12px 30px !important;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+a[href="/career_roadmap"]:hover {
+    box-shadow: 0 0 20px rgba(0, 85, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Secondary Button */
+a[href="/Idont_agree"] {
+    background: #e6ecff !important;
+    color: #1a4dff !important;
+    border: 1px solid rgba(0, 90, 255, 0.3);
+    border-radius: 30px !important;
+    padding: 12px 30px !important;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+a[href="/Idont_agree"]:hover {
+    background: #d6e2ff !important;
+    transform: translateY(-3px);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+
+<div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-2xl">
+
+    <h1 class="text-2xl font-bold text-center mb-6">
+        Career Stream Recommendation
+    </h1>
+
+    <!-- Best Stream -->
+    <div class="text-center mb-6">
+        <h2 class="text-xl font-semibold">
+            Best Stream: 
+            <span class="text-blue-600">{{ best_stream }}</span>
+        </h2>
+
+        <p class="mt-2">
+            Confidence Level: 
+            <b>{{ confidence_level }}</b>
+        </p>
+    </div>
+
+    <!-- Scores -->
+    <h3 class="font-bold mb-3">Stream Scores</h3>
+
+    {% for stream, score in top_2 %}
+        <p>
+            {{ stream }} :
+            {{ (score * 100) | round(2) }}%
+        </p>
+    {% endfor %}
+`
+    <!-- Buttons -->
+    <div class="text-center mt-6">
+
+        <a href="/career_roadmap"
+           class="bg-blue-500 text-white px-5 py-2 rounded">
+            Yes I agree with Suggestion 
+        </a>
+
+        <a href="/Idont_agree"
+           class="bg-gray-400 text-white px-5 py-2 rounded ml-3">
+            I Dont Agree with suggestion
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

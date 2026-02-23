@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Career Assistant</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bp-web-widget-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+ 
+/* Page Title */
+.header {
+    position: absolute;
+    top: 40px;
+    text-align: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.header p {
+    opacity: 0.9;
+}
+
+/* FORCE BOT TO CENTER */
+#bp-web-widget-container {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 650px !important;     /* 👈 Increased Width */
+    height: 750px !important;    /* 👈 Increased Height */
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 9999 !important;
+}
+
+/* Hide floating icon completely */
+.bpFab {
+    display: none !important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1> AI Career Assistant</h1>
+    <p>Ask anything about careers, exams, degrees or skills.</p>
+</div>
+
+<!-- Botpress -->
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/02/21/14/20260221143326-LSUFMCZB.js"></script>
+
+<script>
+window.botpressWebChat.init({
+  botName: "Career AI",
+  layout: "embedded",
+  showCloseButton: false
+});
+
+
+window.addEventListener("load", function () {
+
+  window.botpressWebChat.init({
+    botName: "Career AI",
+    showPoweredBy: false,
+    containerWidth: "650px",
+    layoutWidth: "100%",
+  });
+
+  // Auto open chat
+  setTimeout(() => {
+    window.botpressWebChat.sendEvent({ type: "show" });
+  }, 500);
+
+});
+</script>
+
+</body>
+</html>

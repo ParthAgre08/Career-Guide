@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12th Commerce Interest Assessment</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+function updateValue(slider, outputId) {
+    document.getElementById(outputId).innerText = slider.value;
+}
+</script>
+
+<style>
+
+/* ===== Background Override ===== */
+body {
+    background: linear-gradient(135deg, #ffffff 0%, #f2f7ff 50%, #e6f0ff 100%) !important;
+}
+
+/* ===== Main Card ===== */
+body > div {
+    background: #ffffff !important;
+    border-radius: 28px !important;
+    border: 1px solid rgba(0, 90, 255, 0.2);
+    box-shadow:
+        0 25px 70px rgba(0, 60, 255, 0.12),
+        0 0 35px rgba(0, 90, 255, 0.08);
+    transition: 0.3s ease;
+    animation: fadeUp 0.8s ease-in-out;
+}
+
+body > div:hover {
+    box-shadow:
+        0 30px 80px rgba(0, 60, 255, 0.18),
+        0 0 45px rgba(0, 90, 255, 0.15);
+}
+
+/* ===== Main Heading ===== */
+h1 {
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700 !important;
+}
+
+/* ===== Section Heading ===== */
+h2 {
+    color: #1a2a6c !important;
+    border-color: rgba(0, 90, 255, 0.2) !important;
+}
+
+/* ===== Description Text ===== */
+p {
+    color: #4a5c9a !important;
+}
+
+/* ===== Labels ===== */
+label {
+    color: #1a2a6c !important;
+}
+
+/* ===== Slider Track ===== */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #0033cc, #1a75ff);
+    outline: none;
+}
+
+/* ===== Slider Thumb ===== */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #1a4dff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 15px rgba(0, 85, 255, 0.6);
+    transform: scale(1.1);
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #1a4dff;
+    cursor: pointer;
+}
+
+/* ===== Slider Value Numbers ===== */
+span {
+    color: #1a4dff !important;
+    font-size: 18px;
+}
+
+/* ===== Submit Button ===== */
+button[type="submit"] {
+    background: linear-gradient(90deg, #0033cc, #1a75ff) !important;
+    border-radius: 30px !important;
+    padding: 14px 40px !important;
+    font-weight: 700 !important;
+    transition: 0.3s ease !important;
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 0 25px rgba(0, 85, 255, 0.6) !important;
+    transform: translateY(-3px);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+</style>
+
+</head>
+
+<body class="bg-gradient-to-br from-indigo-600 to-purple-700 min-h-screen flex justify-center items-center p-6">
+
+<div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-4xl">
+
+<h1 class="text-3xl font-bold text-center text-gray-800 mb-2">
+12th Commerce – Interest Assessment
+</h1>
+
+<p class="text-center text-gray-600 mb-8">
+Rate each area from <b>1 (Very Low)</b> to <b>5 (Very High)</b>
+</p>
+
+<form method="POST" action="/interest_assessment" class="space-y-8">
+
+<h2 class="text-xl font-semibold text-indigo-700 border-b pb-2">
+Career & Domain Interests
+</h2>
+
+<!-- CA / Finance -->
+<div>
+<label class="block font-medium mb-2">
+I am strongly interested in Chartered Accountancy, Auditing, and Financial Analysis.
+</label>
+<div class="flex items-center gap-4">
+<input type="range" name="interest_ca" min="1" max="5" value="3"
+oninput="updateValue(this,'ca_val')" class="w-full accent-indigo-600" required>
+<span id="ca_val" class="font-bold text-indigo-600 text-lg">3</span>
+</div>
+</div>
+
+<!-- Banking -->
+<div>
+<label class="block font-medium mb-2">
+I am interested in Banking, Investment, and Financial Services.
+</label>
+<div class="flex items-center gap-4">
+<input type="range" name="interest_banking" min="1" max="5" value="3"
+oninput="updateValue(this,'bank_val')" class="w-full accent-indigo-600" required>
+<span id="bank_val" class="font-bold text-indigo-600 text-lg">3</span>
+</div>
+</div>
+
+<!-- Management -->
+<div>
+<label class="block font-medium mb-2">
+I am interested in Management roles and leadership positions.
+</label>
+<div class="flex items-center gap-4">
+<input type="range" name="interest_management" min="1" max="5" value="3"
+oninput="updateValue(this,'mgmt_val')" class="w-full accent-indigo-600" required>
+<span id="mgmt_val" class="font-bold text-indigo-600 text-lg">3</span>
+</div>
+</div>
+
+<!-- Entrepreneurship -->
+<div>
+<label class="block font-medium mb-2">
+I want to start my own business or startup in the future.
+</label>
+<div class="flex items-center gap-4">
+<input type="range" name="interest_entrepreneur" min="1" max="5" value="3"
+oninput="updateValue(this,'ent_val')" class="w-full accent-indigo-600" required>
+<span id="ent_val" class="font-bold text-indigo-600 text-lg">3</span>
+</div>
+</div>
+
+<!-- Economics -->
+<div>
+<label class="block font-medium mb-2">
+I enjoy analyzing economic trends, policies, and financial systems.
+</label>
+<div class="flex items-center gap-4">
+<input type="range" name="interest_economics" min="1" max="5" value="3"
+oninput="updateValue(this,'eco_val')" class="w-full accent-indigo-600" required>
+<span id="eco_val" class="font-bold text-indigo-600 text-lg">3</span>
+</div>
+</div>
+
+<!-- Marketing -->
+<div>
+<label class="block font-medium mb-2">
+I am interested in Marketing, Branding, and Digital Promotion.
+</label>
+<div class="flex items-center gap-4">
+<input type="range" name="interest_marketing" min="1" max="5" value="3"
+oninput="updateValue(this,'mkt_val')" class="w-full accent-indigo-600" required>
+<span id="mkt_val" class="font-bold text-indigo-600 text-lg">3</span>
+</div>
+</div>
+
+<!-- Analytics -->
+<div>
+<label class="block font-medium mb-2">
+I am interested in Business Analytics and Data-driven decision making.
+</label>
+<div class="flex items-center gap-4">
+<input type="range" name="interest_analytics" min="1" max="5" value="3"
+oninput="updateValue(this,'ana_val')" class="w-full accent-indigo-600" required>
+<span id="ana_val" class="font-bold text-indigo-600 text-lg">3</span>
+</div>
+</div>
+
+<!-- Submit -->
+<div class="text-center pt-6">
+<button type="submit"
+class="bg-indigo-600 text-white px-10 py-3 rounded-lg hover:bg-indigo-800 font-bold text-lg transition">
+Generate My Career Profile
+</button>
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interest Assessment</title>
+<title>12th PCB Interest Assessment</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,6 +12,7 @@ function updateValue(slider, outputId) {
     document.getElementById(outputId).innerText = slider.value;
 }
 </script>
+
 
 <style>
 
@@ -25,7 +26,7 @@ body > div {
     background: #ffffff !important;
     border-radius: 28px !important;
     border: 1px solid rgba(0, 90, 255, 0.2);
-    box-shadow: 
+    box-shadow:
         0 25px 70px rgba(0, 60, 255, 0.12),
         0 0 35px rgba(0, 90, 255, 0.08);
     transition: 0.3s ease;
@@ -33,7 +34,7 @@ body > div {
 }
 
 body > div:hover {
-    box-shadow: 
+    box-shadow:
         0 30px 80px rgba(0, 60, 255, 0.18),
         0 0 45px rgba(0, 90, 255, 0.15);
 }
@@ -46,10 +47,10 @@ h1 {
     font-weight: 700 !important;
 }
 
-/* ===== Section Headings ===== */
+/* ===== Section Heading ===== */
 h2 {
     color: #1a2a6c !important;
-    font-weight: 700 !important;
+    border-color: rgba(0, 90, 255, 0.2) !important;
 }
 
 /* ===== Description Text ===== */
@@ -62,7 +63,7 @@ label {
     color: #1a2a6c !important;
 }
 
-/* ===== Slider Styling ===== */
+/* ===== Slider Track ===== */
 input[type="range"] {
     -webkit-appearance: none;
     height: 8px;
@@ -71,14 +72,14 @@ input[type="range"] {
     outline: none;
 }
 
-/* Slider Thumb */
+/* ===== Slider Thumb ===== */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: white;
+    background: #ffffff;
     border: 3px solid #1a4dff;
     cursor: pointer;
     transition: 0.3s ease;
@@ -99,7 +100,7 @@ input[type="range"]::-moz-range-thumb {
     cursor: pointer;
 }
 
-/* ===== Value Numbers ===== */
+/* ===== Slider Value Numbers ===== */
 span {
     color: #1a4dff !important;
     font-size: 18px;
@@ -135,96 +136,100 @@ button[type="submit"]:hover {
 
 </head>
 
-<body class="bg-gradient-to-br from-blue-600 to-green-500 min-h-screen flex justify-center items-center">
+<body class="bg-gradient-to-br from-green-600 to-teal-700 min-h-screen flex justify-center items-center p-6">
 
-<div class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-4xl">
+<div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-4xl">
 
-<h1 class="text-3xl font-bold text-center mb-2">
-Interest & Personality Assessment
+<h1 class="text-3xl font-bold text-center text-gray-800 mb-2">
+12th Science (PCB) Interest Assessment
 </h1>
 
-<p class="text-center text-gray-600 mb-6">
-Rate each statement from <b>1 (Not at all)</b> to <b>5 (Very much)</b>
+<p class="text-center text-gray-600 mb-8">
+Rate each statement from <b>1 (Very Low)</b> to <b>5 (Very High)</b>
 </p>
 
-<form method="POST" action="/interest_assessment">
+<form method="POST" action="/interest_assessment" class="space-y-8">
 
-<!-- SECTION 1 -->
-<h2 class="text-xl font-bold mb-4">1️⃣ Subject Enjoyment</h2>
+<h2 class="text-xl font-semibold text-green-700 border-b pb-2">
+Career & Domain Interests
+</h2>
 
-<div class="space-y-6">
-
-<!-- Maths -->
+<!-- Medical -->
 <div>
-<label class="font-medium">
-I enjoy solving Mathematics problems.
+<label class="block font-medium mb-2">
+I am strongly interested in becoming a Doctor (MBBS/BDS).
 </label>
-
 <div class="flex items-center gap-4">
-<input type="range" name="interest_math" min="1" max="5" value="3"
-oninput="updateValue(this,'math_val')" class="w-full">
-<span id="math_val" class="font-bold text-blue-600">3</span>
+<input type="range" name="interest_medical" min="1" max="5" value="3"
+oninput="updateValue(this,'medical_val')" class="w-full accent-green-600" required>
+<span id="medical_val" class="font-bold text-green-600 text-lg">3</span>
 </div>
 </div>
 
-<!-- Science -->
+<!-- Research -->
 <div>
-<label class="font-medium">
-I like studying Science and experiments.
+<label class="block font-medium mb-2">
+I am interested in Biological Research or Biotechnology.
 </label>
-
 <div class="flex items-center gap-4">
-<input type="range" name="interest_science" min="1" max="5" value="3"
-oninput="updateValue(this,'science_val')" class="w-full">
-<span id="science_val" class="font-bold text-blue-600">3</span>
+<input type="range" name="interest_research" min="1" max="5" value="3"
+oninput="updateValue(this,'research_val')" class="w-full accent-green-600" required>
+<span id="research_val" class="font-bold text-green-600 text-lg">3</span>
 </div>
 </div>
 
-<!-- Business -->
+<!-- Pharmacy -->
 <div>
-<label class="font-medium">
-I enjoy Business and money-related topics.
+<label class="block font-medium mb-2">
+I am interested in Pharmacy or Drug Development.
 </label>
-
 <div class="flex items-center gap-4">
-<input type="range" name="interest_business" min="1" max="5" value="3"
-oninput="updateValue(this,'business_val')" class="w-full">
-<span id="business_val" class="font-bold text-blue-600">3</span>
+<input type="range" name="interest_pharma" min="1" max="5" value="3"
+oninput="updateValue(this,'pharma_val')" class="w-full accent-green-600" required>
+<span id="pharma_val" class="font-bold text-green-600 text-lg">3</span>
 </div>
 </div>
 
-<!-- Creative -->
+<!-- Allied Health -->
 <div>
-<label class="font-medium">
-I enjoy creative subjects like drawing or writing.
+<label class="block font-medium mb-2">
+I am interested in Allied Health Sciences (Physiotherapy, Nursing, Lab Tech).
 </label>
-
 <div class="flex items-center gap-4">
-<input type="range" name="interest_creative" min="1" max="5" value="3"
-oninput="updateValue(this,'creative_val')" class="w-full">
-<span id="creative_val" class="font-bold text-blue-600">3</span>
+<input type="range" name="interest_allied" min="1" max="5" value="3"
+oninput="updateValue(this,'allied_val')" class="w-full accent-green-600" required>
+<span id="allied_val" class="font-bold text-green-600 text-lg">3</span>
 </div>
 </div>
 
-<!-- Social -->
+<!-- Psychology -->
 <div>
-<label class="font-medium">
-I like Social Studies and understanding society.
+<label class="block font-medium mb-2">
+I am interested in Psychology and understanding human behavior.
 </label>
-
 <div class="flex items-center gap-4">
-<input type="range" name="interest_social" min="1" max="5" value="3"
-oninput="updateValue(this,'social_val')" class="w-full">
-<span id="social_val" class="font-bold text-blue-600">3</span>
+<input type="range" name="interest_psychology" min="1" max="5" value="3"
+oninput="updateValue(this,'psych_val')" class="w-full accent-green-600" required>
+<span id="psych_val" class="font-bold text-green-600 text-lg">3</span>
 </div>
 </div>
 
+<!-- Environmental -->
+<div>
+<label class="block font-medium mb-2">
+I am interested in Environmental Science and sustainability.
+</label>
+<div class="flex items-center gap-4">
+<input type="range" name="interest_environment" min="1" max="5" value="3"
+oninput="updateValue(this,'env_val')" class="w-full accent-green-600" required>
+<span id="env_val" class="font-bold text-green-600 text-lg">3</span>
+</div>
 </div>
 
 <!-- SUBMIT -->
-<div class="text-center mt-8">
+<div class="text-center pt-6">
 <button type="submit"
-class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-800 font-bold text-lg">
+class="bg-green-600 text-white px-10 py-3 rounded-lg hover:bg-green-800 font-bold text-lg transition">
 Generate My Career Profile
 </button>
 </div>
